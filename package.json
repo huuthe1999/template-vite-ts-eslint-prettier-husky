@@ -6,17 +6,57 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "prepare": "husky install",
+    "lint:fix": "eslint --fix --ext .ts,tsx,js,jsx --ignore-path .gitignore .",
+    "lint:format": "prettier -u -w --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,css,scss,html}\"",
+    "lint": "yarn lint:format && yarn lint:fix",
     "preview": "vite preview"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "yarn run lint:fix",
+      "yarn run lint:format",
+      "git add ."
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },"husky": {
+	"hooks": {
+	  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+	}
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.54.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.9.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.4",
+    "typescript": "*",
     "vite": "^4.1.0"
-  }
+  },
+  "repository": "git@github.com:huuthe1999/shopee-clone-react-typescript.git",
+  "author": "huuthe1999 <huuthe128@gmail.com>",
+  "license": "MIT"
 }
