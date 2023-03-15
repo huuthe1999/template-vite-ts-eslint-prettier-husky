@@ -38,6 +38,8 @@
     // "import/first": "error",
     // "import/newline-after-import": "error",
     // "import/no-duplicates": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/interface-name-prefix": "off",

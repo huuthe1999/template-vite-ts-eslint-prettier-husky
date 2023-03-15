@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "prepare": "husky install",
-    "lint:fix": "eslint --fix --ext .ts,tsx,js,jsx --ignore-path .gitignore src/",
-    "lint:format": "prettier -u -w --ignore-path .gitignore \"src/**/*.{js,jsx,ts,tsx,css,scss,html}\"",
-    "lint": "yarn lint:format && yarn lint:fix",
+    "lint:fix": "eslint --fix --ext .ts,tsx,js,jsx src/",
+    "prettier:fix": "prettier -w \"src/**/*.{js,jsx,ts,tsx,css,scss,html}\"",
+    "lint": "yarn lint:fix && yarn prettier:fix",
     "preview": "vite preview"
   },
   "lint-staged": {
