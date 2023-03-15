@@ -53,6 +53,12 @@
         "allowSingleExtends": true
       }
     ],
+    "prefer-const": ["error", { "ignoreReadBeforeAssign": true }],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["*"], "next": ["*"] },
+      { "blankLine": "never", "prev": ["const", "let"], "next": ["const", "let"] }
+    ],
     "import/order": [
       "error",
       {
